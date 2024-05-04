@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-use-history';
 
 const EditMap = () => {
   const { id } = useParams();
+  const urlApi = import.meta.env.VITE_APP_API_URL + '/maps/edit/${id}'
   const history = useHistory();
   const [mapData, setMapData] = useState({
     nombre: '',
@@ -23,13 +24,13 @@ const EditMap = () => {
   });
 
   useEffect (() => {
-    fetch(`http://localhost:3000/maps/${id}`)
+    fetch(urlApi)
         .then(response => response.json())
         .then(data => setMapData(data))
         .catch(function() {
             console.log('Funciona')
         });
-}, [id]);
+});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +44,7 @@ const EditMap = () => {
     e.preventDefault();
 
     try {
-        const response = await fetch(`http://localhost:3000/maps/edit/${id}`, {
+        const response = await fetch(urlApi, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

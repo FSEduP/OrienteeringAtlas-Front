@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const Register = () => {
+  const urlApi = import.meta.env.VITE_APP_API_URL + '/auth/register'
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -23,7 +24,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', formData);
+      const response = await axios.post(urlApi, formData);
       console.log(response.data); 
     } catch (error) {
       console.error('Error durante el registro:', error);

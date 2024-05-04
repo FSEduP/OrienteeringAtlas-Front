@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 const Login = () => {
+  const urlApi = import.meta.env.VITE_APP_API_URL + '/auth/login'
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -23,7 +24,7 @@ const Login = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', formData);
+      const response = await axios.post(urlApi, formData);
       console.log(response.data);
       window.location.href = '/maps';
     } catch (error) {

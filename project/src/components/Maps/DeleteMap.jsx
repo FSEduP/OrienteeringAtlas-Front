@@ -8,8 +8,9 @@ const DeleteMap = () => {
     const history = useHistory();
 
     const handleDelete = async () => {
+        const urlApi = import.meta.env.VITE_APP_API_URL + "/createmap/delete/${id}"
         try {
-            const response = await fetch(`http://localhost:3000/maps/delete/${id}`, {
+            const response = await fetch(urlApimaps, {
                 method: 'POST',
             });
 

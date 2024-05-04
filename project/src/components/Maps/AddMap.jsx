@@ -32,6 +32,7 @@ const AddMap = ({ onSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const urlApi = import.meta.env.VITE_APP_API_URL + "/createmap"
       const formData = new FormData();
       formData.append('nombre', mapData.nombre);
       formData.append('imagen', imageFile);
@@ -48,7 +49,7 @@ const AddMap = ({ onSubmit }) => {
       formData.append('federacion', mapData.federacion);
       formData.append('liga', mapData.liga);
 
-      const response = await fetch("http://localhost:3000/createmap", {
+      const response = await fetch(urlApi, {
         method: "POST",
         body: formData,
       });
