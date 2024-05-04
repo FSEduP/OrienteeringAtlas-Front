@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 60px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.orienteeringApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  color: rgb(255 255 255);
+  margin: 0;
+  text-align:center;
+}
+
+img {
+  max-width: 700px;
+  max-height: 500px;
+}
+
+html,body{
+  height:100%;
+}
+
+button{
+  background:#ab671a;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:40px;
+  font-size:1em;
+  padding:0 1em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:#ab371a;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ab3c1a;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #ab671a;
+  background: transparent;
+  color: #ab671a;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  font-size: 1.2em;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid #ab671a;
+  background: transparent;
+  color: #ab671a;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 1.2em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+.pack {
+  display: flex;
+}

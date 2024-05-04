@@ -1,0 +1,55 @@
+.map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.map a {
+    text-decoration: none;
+    color: #ab671a;
+    font-size: 40px;
+}
+
+.map img {
+    width: 500px;
+    height: 400px;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.text {
+    color: #ab671a;
+    padding-left: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.map button {
+    height: 60px;
+}
