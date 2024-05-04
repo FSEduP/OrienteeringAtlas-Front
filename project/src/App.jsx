@@ -42,7 +42,7 @@ const App = () => {
           ? (<div>Cargando...</div>) 
           : 
             <Routes>
-              <Route path="/" element={<Dashboard  />} />
+              <Route path={`${urlApi}/`} element={<Dashboard  />} />
               <Route path="/login" element={<Login  />} />
               <Route path="/register" element={<Register  />} />
               <Route path="/maps" element={<Maps data={data} />} />
