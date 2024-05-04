@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
 import Maps from "./components/Maps/Maps.jsx";
@@ -18,16 +18,19 @@ const App = () => {
   const [data, setData] = useState(null)
   const urlApi = import.meta.env.VITE_APP_API_URL
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(urlApi)
-      const resData = await response.json()
-      setData(resData)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(urlApi);
+        const resData = await response.json();
+        setData(resData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-    } catch (error) {
-      console.log(error)
-    }
-  }
+    fetchData();
+  }, [urlApi]);
 
   const handleAddMap = async () => {
     await fetchData();
